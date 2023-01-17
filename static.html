@@ -1,0 +1,281 @@
+<head>
+  <title>Boleto Parcelado</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: normal;
+      letter-spacing: normal;
+      font-stretch: normal;
+      line-height: normal;
+    }
+
+    .contact a {
+      color: #000000;
+      text-decoration: none !important;
+      pointer-events: none !important;
+    }
+
+    .contact span {
+      text-decoration: none !important;
+      pointer-events: none !important;
+    }
+
+
+
+    p.Resumo {
+      line-height: 200%;
+      padding: 2% 0 2% 2%;
+      display: inline;
+    }
+
+    span.Resumo {
+      line-height: 200%;
+      padding: 2% 1% 2% 2%;
+      display: inline;
+    }
+
+    @media screen and (max-width: 600px) {
+      p.Resumo {
+        line-height: 100%;
+        padding: 0 0 0 2%;
+        margin: 2% 0;
+        display: block;
+      }
+
+      span.Resumo {
+        line-height: 100%;
+        padding: 0 0 2% 2%;
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div style="width: 100%;margin: 0;padding: 0!important;background-color: #eeeeee;">
+    <center style="width: 100%; background-color: #eeeeee; padding-bottom:4%;">
+      <div style="max-width:680px; margin:0 auto; ">
+        <!-- abaixo Tabela logo -->
+        <table style="margin: 0;width: 95%;text-align: center">
+          <tbody>
+            <tr>
+              <td style="padding: 24px 0 24px 0; text-align: center;">
+                <img style="max-width: 50%;" src="https://d3jdy5kagtp3z4.cloudfront.net/images/modules/email/logoingressolive.png" alt="Logo Ingressolive">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- abaixo Tabela Assunto -->
+        <table cellspacing="0" cellpadding="0" role="presentation" border="0" style="border-top-left-radius: 4px;border-top-right-radius: 4px;border-top: 4px solid #FF5F2D!important;padding: 0 4%;background-color: #ffffff;width: 95%;">
+          <tbody>
+            <tr>
+              <td>
+                <h1 style="font-size: 25px;
+                font-weight: 900;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.4;
+                letter-spacing: 0.1px;
+                color: #4a4a4a;
+                text-align: center;
+                margin: 5px;
+                font-family: 'Raleway', sans-serif;">Compra no boleto parcelado iniciada!
+                </h1>
+              </td>
+            </tr>
+            <tr>
+              <td style=" padding: 0;font-size: 14px;line-height: 1.5;background-color: #ffffff;">
+                <hr style="height: 1px;border: none;margin-top: 2%;background-color: #d6d8db;">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- abaixo Tabela Mensagem -->
+        <table cellspacing="0" cellpadding="0" role="presentation" border="0" style="border-top-left-radius: 4px;border-top-right-radius: 4px;padding: 0 4%;background-color: #ffffff;width: 95%; margin-top: -5px;">
+          <tbody>
+            <tr>
+              <td>
+                <p style="margin: 0;text-align: left;padding-top: 4%;font-size: 90%;line-height: 100%;color: #000000; ">Olá <b style="font-size: 110%;">
+                    <?php echo $inscricao->entrega_nome; ?>
+                  </b></p>
+
+                <p style="margin: 0;text-align: left;padding-top: 2%;font-size: 90%;line-height: 100%;color: #000000; ">Boletos parcelados gerados com sucesso! Clique em <b>"ACESSAR BOLETOS"</b>, para abrir sua pagina de pagamentos.</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center; padding: 3% 0;"><br>
+                <a href="<?php echo 'https://www.ingressolive.com/api/participante/buscarBoletos?email='.$inscricao->entrega_email.'&cod_rastreio='.$inscricao->codigo_rastreamento; ?>" style="padding:15px;border-radius:10px;text-align:center; background:#FF5F2D!important;font-size:17px;font-weight:bold;color: #ffffff!important;text-decoration:none;" target="_blank">ACESSAR BOLETOS
+                </a>
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="margin: 0;text-align: left;padding-top: 2%;font-size: 90%;line-height: 100%;color: #000000; ">Você dividiu sua compra em<b style="font-size: 120%;"> "
+                    <?php echo $inscricao->cartao_parcelas; ?> "
+                  </b>boletos.</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0;font-size: 14px;line-height: 1.5;background-color: #ffffff;">
+                <hr style="height: 1px;border: none;margin-top: 2%;background-color: #d6d8db;">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- abaixo Tabela Resumo do pedido -->
+        <table cellspacing="0" cellpadding="0" role="presentation" border="0" style="border-top-left-radius: 4px;border-top-right-radius: 4px;padding: 0 4% 2% 4%;margin-top: 3px !important;background-color: #ffffff;width: 95%;">
+          <thead>
+            <tr>
+              <th>
+                <h2 style="margin: 0;text-align: left;padding: 24px 0 12px 0;font-size: 130%;line-height:100%;color: #000000;">Resumo do pedido</h2>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="background-color: #f2f2f2;">
+                <p class="Resumo" style="font-weight: bold;color: #000000;font-size: 90%;">Evento:&nbsp;</p>
+                <span class="Resumo" style="color: #000000; font-size: 90%;">
+                  <?php echo $evento['evento']; ?>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="Resumo" style="font-weight: bold;color: #000000;font-size: 90%;">Organizador:&nbsp;</p>
+                <span class="Resumo" style="color: #000000; font-size: 90%;">
+                  <?php echo $evento['organizador']; ?>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td style="background-color: #f2f2f2;">
+                <p class="Resumo" style="font-weight: bold;color: #000000;font-size: 90%;">Comprador:&nbsp;</p>
+                <span class="Resumo" style="color: #000000; font-size: 90%;">
+                  <?php echo $inscricao->entrega_nome; ?>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="contact">
+                <p class="Resumo" style="font-weight: bold;color: #000000;text-decoration: none;font-size: 90%;">E-mail:&nbsp;</p>
+                <span class="Resumo" style="color:#000000;text-decoration:none!important;font-size: 90%">
+                  <?php echo $inscricao->entrega_email; ?>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td style="background-color: #f2f2f2;">
+                <p class="Resumo" style="font-weight: bold;color: #000000;font-size: 90%;">Código do pedido:&nbsp;</p>
+                <span class="Resumo" style="color: #000000; font-size: 90%">
+                  <?php echo $inscricao->codigo_rastreamento; ?>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="contact">
+                <p class="Resumo" style="font-weight: bold;color: #000000;font-size: 90%;">Data do pedido:&nbsp;</p>
+                <span class="Resumo" style="color: #000000; font-size: 90%;">
+                  <?php echo date("d/m/Y H:i:s", strtotime($inscricao->criado_em)); ?>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td style="background-color: #f2f2f2;">
+                <p class="Resumo" style="font-weight: bold;color: #000000;font-size: 90%;">Pagamento:&nbsp;</p>
+                <span class="Resumo" style="color: #000000; font-size: 90%">
+                  <?php echo $inscricao->pagamentoTipo->descricao; ?>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="Resumo" style="font-weight: bold;color: #000000;font-size: 90%;">Valor total:&nbsp;</p>
+                <span class="Resumo" style="color: #000000; font-size: 90%;">R$:
+                  <?php echo number_format($total,2,",","."); ?>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0;font-size: 14px;line-height: 1.5;background-color: #ffffff;">
+                <hr style="height: 1px;border: none;margin-top: 2%;background-color: #d6d8db;">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- abaixo Tabela central de ajuda -->
+        <table cellspacing="0" cellpadding="0" role="presentation" border="0" style="border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom: 4px solid #ff5f2d!important;padding: 0 4% 2% 4%;background-color: #ffffff;width: 95%;">
+          <tbody>
+            <tr>
+              <td>
+                <img alt="atencao" title="atencao" src="https://d3jdy5kagtp3z4.cloudfront.net/images/modules/email/atencao.png" width="20">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <h2 style="margin: 0% 2% 0% 4%;text-align: left;padding: 6px 0 10px 0;font-size: 120%;line-height: 100%;color: #000000; ">Ver pedido completo!
+                </h2>
+                <p style="margin: 0;text-align: left;padding: 0% 2% 2% 4%;font-size: 90%;line-height: 100%;color: #000000; ">Clique no botão <b>"Meus Ingressos"</b>, a seguir, que será direcionado, para sua conta em nosso site, depois basta clicar no código do pedido. Obs: Você deve estar logado com o mesmo e-mail que cadastrou na compra. <b>Não possui cadastrado?</b> Ao ser direcionado, crie uma conta, utilizando o mesmo e-mail da compra.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center; padding: 3% 0;">
+                <br>
+                <a style=" padding:2%;border-radius:36px;text-align:center;background:#FF5F2D!important;font-weight:bold;color: #ffffff!important;text-decoration:none;" href="https://www.ingressolive.com/organizador/meusingressos" target="_blank">Meus Ingressos</a>
+                <br>
+                <br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- abaixo Tabela rodape -->
+        <table cellspacing="0" cellpadding="0" role="presentation" border="0" style="text-align:center;width:95%;">
+          <tbody>
+            <tr>
+              <td style="padding:3% 0% 0% 0%">
+                <p style="color: #000000;font-size: 90%"><b>© 2021 Ingressolive</b></p>
+                <p style="color: #000000;font-size: 90%">Todos os direitos reservados.</p>
+                <p style="color: #000000;font-size: 90%">Este é um e-mail automático.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table style="width: 100%;text-align: center;">
+                  <tbody>
+                    <tr>
+                      <td style="width: 100%;text-align: center; padding: 12px 0;">
+                        <a href="https://www.instagram.com/ingressolive/" target="_blank"><img style="width: 30px;height: 30px;padding:0 6px 0 6px;text-align: center;" src="https://d3jdy5kagtp3z4.cloudfront.net/images/modules/email/insta.png" alt="Instagram Ingressolive"></a>
+
+                        <a href="https://www.facebook.com/IngressoLive" target="_blank"><img style="width: 30px;height: 30px;padding:0 6px 0 6px;text-align: center;" src="https://d3jdy5kagtp3z4.cloudfront.net/images/modules/email/face.png" alt="Facebook Ingressolive"></a>
+
+                        <a href="https://twitter.com/ingressolive" target="_blank"><img style="width: 30px;height: 30px;padding:0 6px 0 6px;text-align: center;" src="https://d3jdy5kagtp3z4.cloudfront.net/images/modules/email/tw.png" alt="Twitter Ingressolive"></a>
+
+                        <a href="https://br.linkedin.com/company/ingressolive" target="_blank"><img style="width: 30px;height: 30px;padding:0 6px 0 6px;text-align: center;" src="https://d3jdy5kagtp3z4.cloudfront.net/images/modules/email/lk.png" alt="LinkedIn Ingressolive"></a>
+
+                        <a href="https://blog.ingressolive.com/" target="_blank"><img style="width: 30px;height: 30px;padding:0 6px 0 6px;text-align: center;" src="https://d3jdy5kagtp3z4.cloudfront.net/images/modules/email/blog.png" alt="Blog Ingressolive"></a>
+
+                        <a href="https://www.ingressolive.com/" target="_blank"><img style="width: 30px;height: 30px;padding:0 6px 0 6px;text-align: center;" src="https://d3jdy5kagtp3z4.cloudfront.net/images/modules/email/site.png" alt="Site Ingressolive"></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr style="text-align:center">
+              <td>
+                <p><a style="text-decoration: none!important;color: #FF5F2D!important;font-size: 90%;" href="https://www.ingressolive.com/politica-de-privacidade.html" target="_blank">POLÍTICA DE PRIVACIDADE</a></p>
+                <p><a style="text-decoration: none!important;color: #FF5F2D!important;font-size: 90%;" href="https://ingressolive.zendesk.com/hc/pt-br" target="_blank">CENTRAL DE AJUDA</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </center>
+  </div>
+</body>

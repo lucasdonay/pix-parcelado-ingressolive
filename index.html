@@ -225,6 +225,10 @@ e o efento bold(texto em negrito)  */
         width: 100px !important;
         height: 150px !important;
       }
+
+      div.donay-width {
+        width: 100% !important;
+      }
     }
 
     /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
@@ -238,6 +242,7 @@ e o efento bold(texto em negrito)  */
       border-radius: 4px;
       width: 95%;
       font-size: 80%;
+      margin-top: -10px;
     }
 
 
@@ -260,28 +265,26 @@ e o efento bold(texto em negrito)  */
 
     }
 
-    #icon {
+    #link {
       color: #FF5F2D;
       background-color: #ffffff;
       border: 2px solid #FF5F2D;
       width: 30px;
       height: 20px;
-      border-radius: 36px;
-      font-size: 150%;
+      padding: 5px;
+      border-radius: 10px;
+      font-size: 120%;
+      text-decoration: none;
+      transition: 0.3s ease-out;
     }
 
 
-    #icon:hover {
+    #link:hover {
       color: white;
       background-color: #FF5F2D;
       border: 2px solid white;
+      font-weight: 500;
     }
-
-    #link {
-      color: #000000;
-      text-align: center;
-    }
-
 
     /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
     /* xxxxxxxxxxxxxxxxxxxxx TABELA xxx CENTRAL DE AJUDA  xxxxxxxxxxxxxxxxxxxxxxxx */
@@ -481,7 +484,7 @@ e o efento bold(texto em negrito)  */
               <p class="Mensagem">Na tabela <b>'Parcelas do pedido'</b> clique no ícone visualizar, para acessar seus QR's Codes e realizar os pagamentos.<br>
 
 
-              <p class="Mensagem">Você dividiu sua compra em<b style="font-size: 120%;"> "3" </b> <span class="pixs">pixs.<span></p>
+              <p class="Mensagem">Você dividiu sua compra em<b style="font-size: 120%;"> "3" </b> <span class="pixs">Parcelas.<span></p>
             </td>
 
             <td>
@@ -515,13 +518,15 @@ e o efento bold(texto em negrito)  */
                             <tr>
                               <td>
 
-                                <div style=" display: flex; flex-direction: column; width:100%; padding: 0 2px;">
+                                <div class="donay-width" style=" display: flex; flex-direction: column; width:145%; padding: 0 2px;">
 
                                   <p class="Resumo">Evento: <span class="span-donay">ChernoBIO FEST</span></p>
 
                                   <p class="Resumo">Organizador:<span class="span-donay">LUCAS DONAY</span></p>
 
                                   <p class="Resumo">Comprador:<span class="span-donay">Lucas Donay Goncalves da Silva Miranda</span></p>
+
+                                  <p class="Resumo">Código do Pedido:<span class="span-donay">QVWE3</span></p>
 
                                   <p class="Resumo">Data do pedido:<span class="span-donay">12:02:32 17-01-2023</span></p>
 
@@ -574,7 +579,7 @@ e o efento bold(texto em negrito)  */
             <p class="Parcela">Venci<wbr>mento</p>
           </td>
           <td>
-            <p class="Parcela">Pix</p>
+            <p class="Parcela" style="margin-left: 15px;">Pix</p>
           </td>
         </tr>
       </thead>
@@ -595,10 +600,10 @@ e o efento bold(texto em negrito)  */
           </td>
           <td>
             <p class="Parcela">
-              10/01/2023 </p>
+              Data do Evento </p>
           </td>
           <td>
-            <a id="link" href="https://api-boleto-production.s3.amazonaws.com/f037df4d610a4cd99ffdad224ab7c762/6f7774a2c8904a608598a66bca982869/63b81d4afab9df13437a8e71.html" target="_blank"><i class="fa fa-eye" id="icon"></i></a>
+            <a id="link" href="https://api-boleto-production.s3.amazonaws.com/f037df4d610a4cd99ffdad224ab7c762/6f7774a2c8904a608598a66bca982869/63b81d4afab9df13437a8e71.html" target="_blank">PAGAR</a>
           </td>
         </tr>
         <tr>
@@ -617,10 +622,10 @@ e o efento bold(texto em negrito)  */
           </td>
           <td>
             <p class="Parcela">
-              09/02/2023 </p>
+              Data do Evento </p>
           </td>
           <td>
-            <a id="link" href="https://api-boleto-production.s3.amazonaws.com/f037df4d610a4cd99ffdad224ab7c762/6f7774a2c8904a608598a66bca982869/63b81d4bd889070c5b798589.html" target="_blank"><i class="fa fa-eye" id="icon"></i></a>
+            <a id="link" href="https://api-boleto-production.s3.amazonaws.com/f037df4d610a4cd99ffdad224ab7c762/6f7774a2c8904a608598a66bca982869/63b81d4afab9df13437a8e71.html" target="_blank">PAGAR</a>
           </td>
         </tr>
         <tr>
@@ -639,10 +644,10 @@ e o efento bold(texto em negrito)  */
           </td>
           <td>
             <p class="Parcela">
-              11/03/2023 </p>
+              Data do Evento </p>
           </td>
           <td>
-            <a id="link" href="https://api-boleto-production.s3.amazonaws.com/f037df4d610a4cd99ffdad224ab7c762/6f7774a2c8904a608598a66bca982869/63b81d4cd889070c5b79858a.html" target="_blank"><i class="fa fa-eye" id="icon"></i></a>
+            <a id="link" href="https://api-boleto-production.s3.amazonaws.com/f037df4d610a4cd99ffdad224ab7c762/6f7774a2c8904a608598a66bca982869/63b81d4afab9df13437a8e71.html" target="_blank">PAGAR</a>
           </td>
         </tr>
       </tbody>
